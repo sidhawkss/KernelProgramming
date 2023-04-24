@@ -34,19 +34,19 @@ static struct proc_ops proc_fops = {
 };
 
 static ssize_t func_read(struct file *file, char __user *buf, size_t size, loff_t *pos){
-    printk(KERN_INFO "read working\n");
+    pr_info("read\n");
     return 0;
 }
 static ssize_t func_write(struct file *file, const char __user *buf, size_t size, loff_t *pos){
-    pr_info("write working\n");
+    pr_info("write\n");
     return 0;
 }
 static int func_open(struct inode *inode, struct file *file){
-    printk(KERN_INFO "open working\n");
+    pr_info("open\n");
     return 0;
 }
 static int func_release(struct inode *inode, struct file *file){
-    pr_info("release working\n");
+    pr_info("release\n");
     return 0;
 }
 static long ioctl_test(struct file *filep, unsigned int cmd, unsigned long arg){
